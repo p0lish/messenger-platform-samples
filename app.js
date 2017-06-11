@@ -82,7 +82,8 @@ app.get('/webhook', function(req, res) {
  */
 app.post('/webhook', function (req, res) {
   var data = req.body;
-
+  console.log("REQUEST_DATA");
+  console.log(data);
   // Make sure this is a page subscription
   if (data.object == 'page') {
     // Iterate over each entry
@@ -150,7 +151,7 @@ app.get('/authorize', function(req, res) {
  * https://developers.facebook.com/docs/graph-api/webhooks#setup
  *
  */
-function verifyRequestSignature(req, res, buf) {
+function hverifyRequestSignature(req, res, buf) {
   var signature = req.headers["x-hub-signature"];
 
   if (!signature) {
