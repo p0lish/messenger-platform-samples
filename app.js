@@ -83,7 +83,8 @@ app.get('/webhook', function(req, res) {
 app.post('/webhook', function (req, res) {
   var data = req.body;
   console.log("REQUEST_DATA");
-  console.log(data);
+  console.log(JSON.stringify(data));
+  console.log("END_REQUEST_DATA");
   // Make sure this is a page subscription
   if (data.object == 'page') {
     // Iterate over each entry
